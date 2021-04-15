@@ -1,0 +1,27 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+def build(bld):
+    module = bld.create_ns3_module('spider', ['location-service', 'internet', 'wifi', 'applications', 'mesh', 'point-to-point', 'virtual-net-device'])
+    module.source = [
+        'model/spider-ptable.cc',
+        'model/spider-rqueue.cc',
+        'model/spider-packet.cc',
+        'model/spider.cc',
+        'helper/spider-helper.cc',
+        ]
+
+    headers = bld(features='ns3header')
+    headers.module = 'spider'
+    headers.source = [
+        'model/spider-ptable.h',
+        'model/spider-rqueue.h',
+        'model/spider-packet.h',
+        'model/spider.h',
+        'helper/spider-helper.h',
+        ]
+
+    #if bld.env['ENABLE_EXAMPLES']:
+    #    bld.recurse('examples')
+
+    #bld.ns3_python_bindings()
+
