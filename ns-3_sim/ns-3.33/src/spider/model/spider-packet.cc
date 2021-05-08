@@ -16,7 +16,12 @@
 /* along with SPIDER.  If not, see <http://www.gnu.org/licenses/>.            */
 /*                                                                          */
 /****************************************************************************/
-
+/*                                                                          */
+/*  Author:    Dmitrii Chemodanov, University of Missouri-Columbia          */
+/*  Title:     SPIDER: AI-augmented Geographic Routing Approach for IoT-based */
+/*             Incident-Supporting Applications                             */
+/*  Revision:  1.0         6/19/2017                                        */
+/****************************************************************************/
 #include "spider-packet.h"
 #include "ns3/address-utils.h"
 #include "ns3/packet.h"
@@ -299,7 +304,7 @@ operator<< (std::ostream & os, PositionHeader const & h)
 bool
 PositionHeader::operator== (PositionHeader const & o) const
 {
-  return (m_dstPosx == o.m_dstPosx && m_dstPosy == m_dstPosy && m_updated == o.m_updated && m_recPosx == o.m_recPosx && m_recPosy == o.m_recPosy && m_inRec == o.m_inRec && m_lastPosx == o.m_lastPosx && m_lastPosy == o.m_lastPosy);
+  return (m_dstPosx == o.m_dstPosx && m_dstPosy == o.m_dstPosy && m_updated == o.m_updated && m_recPosx == o.m_recPosx && m_recPosy == o.m_recPosy && m_inRec == o.m_inRec && m_lastPosx == o.m_lastPosx && m_lastPosy == o.m_lastPosy);
 }
 
 

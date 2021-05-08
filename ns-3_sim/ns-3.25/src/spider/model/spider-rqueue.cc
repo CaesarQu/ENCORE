@@ -16,7 +16,12 @@
 /* along with SPIDER.  If not, see <http://www.gnu.org/licenses/>.            */
 /*                                                                          */
 /****************************************************************************/
-
+/*                                                                          */
+/*  Author:    Dmitrii Chemodanov, University of Missouri-Columbia          */
+/*  Title:     SPIDER: AI-augmented Geographic Routing Approach for IoT-based */
+/*             Incident-Supporting Applications                             */
+/*  Revision:  1.0         6/19/2017                                        */
+/****************************************************************************/
 #include "spider-rqueue.h"
 #include <algorithm>
 #include <functional>
