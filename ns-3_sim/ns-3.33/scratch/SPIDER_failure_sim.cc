@@ -320,7 +320,7 @@ int main (int argc, char *argv[])
   // Set up WiFi
   WifiHelper wifi;
 
-  YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper::Default ();
+  YansWifiPhyHelper wifiPhy =  YansWifiPhyHelper();
   wifiPhy.SetPcapDataLinkType (YansWifiPhyHelper::DLT_IEEE802_11);
 
   YansWifiChannelHelper wifiChannel ;
@@ -335,8 +335,8 @@ int main (int argc, char *argv[])
   wifiPhy.Set ("TxPowerLevels", UintegerValue(1));
   wifiPhy.Set ("TxGain", DoubleValue(6));
   wifiPhy.Set ("RxGain", DoubleValue(0));
-  wifiPhy.Set ("EnergyDetectionThreshold", DoubleValue(-68.8));//-64.5));
-  wifiPhy.Set ("CcaMode1Threshold", DoubleValue(-71.8));//-67.5));
+  //wifiPhy.Set ("SignalDetectionThreshold", DoubleValue(-64.5));//-64.5));
+  //wifiPhy.Set ("EdThreshold", DoubleValue(-71.8));//-67.5));
 
   wifiPhy.SetChannel (wifiChannel.Create ());
   NetDeviceContainer devices;
@@ -378,17 +378,17 @@ int main (int argc, char *argv[])
   
   // configure mesh energy model
   // uncomment for hwmp
-  MeshRadioEnergyModelHelper meshEnergyHelper; 
-  meshEnergyHelper.Set ("TxCurrentA", DoubleValue (0.0174));
-  meshEnergyHelper.Set ("RxCurrentA", DoubleValue (0.0174));
-  DeviceEnergyModelContainer deviceModels = meshEnergyHelper.Install (devices, sources); 
+//  WifiRadioEnergyModelHelper wifiEnergyHelper; 
+//  wifiEnergyHelper.Set ("TxCurrentA", DoubleValue (0.0174));
+//  wifiEnergyHelper.Set ("RxCurrentA", DoubleValue (0.0174));
+//  DeviceEnergyModelContainer deviceModels = wifiEnergyHelper.DoInstall (devices, sources); 
 
   // configure radio energy model 
   // uncomment for other routing
-  //WifiRadioEnergyModelHelper radioEnergyHelper; 
-  //radioEnergyHelper.Set ("TxCurrentA", DoubleValue (0.0174)); 
-  //radioEnergyHelper.Set ("RxCurrentA", DoubleValue (0.0174));
-  //DeviceEnergyModelContainer deviceModels = radioEnergyHelper.Install (devices, sources); 
+  WifiRadioEnergyModelHelper radioEnergyHelper; 
+  radioEnergyHelper.Set ("TxCurrentA", DoubleValue (0.0174)); 
+  radioEnergyHelper.Set ("RxCurrentA", DoubleValue (0.0174));
+  DeviceEnergyModelContainer deviceModels = radioEnergyHelper.Install (devices, sources); 
   //==========================================
 
 /*
