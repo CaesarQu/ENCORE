@@ -1,20 +1,20 @@
-# SPIDER3D
-repository for the SPIDER3D algorithm.
+# ENCORE
+repository for the ENROCE algorithm.
 
-We introduce a novel environmentally-aware cooperative drone path computation scheme viz., **SPIDER-3D** that can serve needs of full autonomy in multi-drone, multi-truck last-mile parcel delivery tasks. 
-First, our 3D \textit{offline} approach builds upon the geographic routing scheme in SPIDER, and involves proactively ensuring energy efficiency, while maximizing the throughput of parcel delivery. Our SPIDER-3D approach that is inherently offline-based, provides resilience to FANETs that are relevant to the delivery application scenario by overcoming barriers due to obstacles that impact A2A and A2G network communications. The resilience feature in SPIDER-3D geographic routing is due to our ability to ensure that the reconstruction of the A2A or A2G network communications has limited overhead on the Oracle delivery task, which is attributed to the state-of-the-art *parcel delivery scheduling algorithm*.
+We introduce a novel environmentally-aware cooperative robotic vehicle path computation scheme viz., **ENCORE** that can serve needs of full autonomy in multi-robot, multi-drone, multi-truck last-mile parcel delivery tasks. 
+First, our 3D \textit{offline} approach builds upon the geographic routing scheme in ENCORE, and involves proactively ensuring energy efficiency, while maximizing the throughput of parcel delivery. Our ENCORE approach that is inherently offline-based, provides resilience to FANETs that are relevant to the delivery application scenario by overcoming barriers due to obstacles that impact A2A and A2G network communications. The resilience feature in ENCORE geographic routing is due to our ability to ensure that the reconstruction of the A2A or A2G network communications has limited overhead on the Oracle delivery task, which is attributed to the state-of-the-art *parcel delivery scheduling algorithm*.
 
-## Apply SPIDER-3D in parcel delivery procedure
+## Apply ENCORE in parcel delivery procedure
 
-**SPIDER-3D** is first used inside parcel delivery applications. To apply SPIDER-3D, a scheduling algorithm result needs to be given. For instance, in our use case, we use [mFSTSP algorithm](https://github.com/optimatorlab/mFSTSP). We considered 1-4 drones and 0-2 trucks on the parcel delivery scenario. 
+**ENCORE** is first used inside parcel delivery applications. To apply ENCORE, a scheduling algorithm result needs to be given. For instance, in our use case, we use [mFSTSP algorithm](https://github.com/optimatorlab/mFSTSP). We considered 1-4 drones and 0-2 trucks on the parcel delivery scenario. 
 
 ## NS-3 scripts
 
-Folder [ns-3_sim](./ns-3_sim) provides SPIDER3D implementation scripts. SPIDER3D needs to have location-based module in NS-3 as a add-on, which is also provided in the folder.
+Folder [ns-3_sim](./ns-3_sim) provides ENCORE implementation scripts. ENCORE needs to have location-based module in NS-3 as a add-on, which is also provided in the folder.
 
 ## Preliminary results:
 
-|      | Drone | GEAR (with $\theta$ = 0.75) |      1     | SPIDER-3D (with $\theta$ = 0) |    0.25    |     0.5    |    0.75    |      1     |    AODV    |    HWMP    |
+|      | Drone | GEAR (with $\theta$ = 0.75) |      1     | ENCORE (with $\theta$ = 0) |    0.25    |     0.5    |    0.75    |      1     |    AODV    |    HWMP    |
 |:----:|:-----:|:---------------------------:|:----------:|:-----------------------------:|:----------:|:----------:|:----------:|:----------:|:----------:|:----------:|
 |  low |   1   |          525$\pm$70         | 522$\pm$46 |           519$\pm$34          | 520$\pm$37 | 519$\pm$42 | 522$\pm$37 | 520$\pm$31 | 489$\pm$27 | 563$\pm$61 |
 |      |   3   |          514$\pm$14         | 515$\pm$13 |           514$\pm$12          | 507$\pm$18 | 506$\pm$18 | 506$\pm$50 | 501$\pm$40 | 480$\pm$31 | 532$\pm$89 |
@@ -82,4 +82,4 @@ Parameters:
 
 ## Future Plan
 
-Provide security strategies inside SPIDER3D, add pre-existing packages on NS-3 to support. Experiments with attack dataset on IoT devices/sensors are considered.
+Provide security strategies inside ENCORE, add pre-existing packages on NS-3 to support. Experiments with attack dataset on IoT devices/sensors are considered.
