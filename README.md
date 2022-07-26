@@ -6,7 +6,7 @@ First, our 3D \textit{offline} approach builds upon the geographic routing schem
 
 ## Apply ENCORE in parcel delivery procedure
 
-**ENCORE** is first used inside parcel delivery applications. To apply ENCORE, a scheduling algorithm result needs to be given. For instance, in our use case, we use [mFSTSP algorithm](https://github.com/optimatorlab/mFSTSP). We considered 1-4 drones and 0-2 trucks on the parcel delivery scenario. 
+**ENCORE** is first used inside parcel delivery applications. To apply ENCORE, a scheduling algorithm result needs to be given. For instance, in our use case, we use [mFSTSP algorithm](https://github.com/optimatorlab/mFSTSP). We considered 1-2 drones, 1-2 SADRs and 0-2 trucks on the parcel delivery scenario. 
 
 ## NS-3 scripts
 
